@@ -5,9 +5,9 @@ public class MoodAnalyser {
         String lowerMessage = message.toLowerCase();
 
         if (lowerMessage.contains("happy") || lowerMessage.contains("joy") || lowerMessage.contains("excited")) {
-            return "Happy Mood";
+            return "HAPPY";
         } else if (lowerMessage.contains("sad") || lowerMessage.contains("unhappy") || lowerMessage.contains("down")) {
-            return "Sad Mood";
+            return "SAD";
         }
         return null;
     }
