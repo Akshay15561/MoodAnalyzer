@@ -14,7 +14,7 @@ public class Main
         String userMessage = scanner.nextLine();
 
 
-        String mood = moodAnalyser.analyseMood(userMessage);
+        String mood = moodAnalyser.analyseMood();
         System.out.println("The mood is: " + mood);
 
 

@@ -1,14 +1,23 @@
 package org.example;
 
 public class MoodAnalyser {
-    public String analyseMood(String message) {
+
+    private String message;
+
+    public MoodAnalyser() {
+        this.message = "";
+    }
+    public MoodAnalyser(String message) {
+        this.message = message;
+    }
+    public String analyseMood() {
         String lowerMessage = message.toLowerCase();
 
-        if (lowerMessage.contains("happy") || lowerMessage.contains("joy") || lowerMessage.contains("excited")) {
-            return "HAPPY";
-        } else if (lowerMessage.contains("sad") || lowerMessage.contains("unhappy") || lowerMessage.contains("down")) {
+        if (message.toLowerCase().contains("sad")) {
             return "SAD";
         }
         return "HAPPY";
     }
+
+
 }
