@@ -9,6 +9,6 @@ public class MoodAnalyser {
         } else if (lowerMessage.contains("sad") || lowerMessage.contains("unhappy") || lowerMessage.contains("down")) {
             return "SAD";
         }
-        return null;
+        return "HAPPY";
     }
 }
