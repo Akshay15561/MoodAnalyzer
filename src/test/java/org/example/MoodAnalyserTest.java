@@ -25,16 +25,16 @@ public class MoodAnalyserTest {
         assertEquals("HAPPY", result);
     }
     @Test
-    public void testAnalyseMood_ShouldThrowExceptionForNullMessage() {
+    public void testAnalyseMood_ShouldHandleNullMood() {
         MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        Exception exception = assertThrows(IllegalArgumentException.class, moodAnalyser::analyseMood);
-        assertEquals("Message cannot be null or empty", exception.getMessage());
+        String result = moodAnalyser.analyseMood();
+        assertEquals("HAPPY", result);
     }
 
     @Test
-    public void testAnalyseMood_ShouldThrowExceptionForEmptyMessage() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("");
-        Exception exception = assertThrows(IllegalArgumentException.class, moodAnalyser::analyseMood);
-        assertEquals("Message cannot be null or empty", exception.getMessage());
+    public void testAnalyseMood_ShouldHandleEmptyMood() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        String result = moodAnalyser.analyseMood();
+        assertEquals("HAPPY", result);
     }
 }

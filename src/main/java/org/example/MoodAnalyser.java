@@ -11,6 +11,7 @@ public class MoodAnalyser {
         this.message = message;
     }
     public String analyseMood() {
+        try {
         if (message == null || message.trim().isEmpty()) {
             throw new IllegalArgumentException("Message cannot be null or empty");
         }
@@ -18,6 +19,9 @@ public class MoodAnalyser {
 
         if (message.toLowerCase().contains("sad")) {
             return "SAD";
+        }
+        } catch (Exception e) {
+            return "HAPPY";
         }
         return "HAPPY";
     }
