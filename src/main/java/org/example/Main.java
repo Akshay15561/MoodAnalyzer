@@ -10,15 +10,25 @@ public class Main
 
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a message:");
-        String userMessage = scanner.nextLine();
+
+        try {
+            System.out.println("Enter a message:");
+            String userMessage = scanner.nextLine();
+            moodAnalyser = new MoodAnalyser(userMessage);
 
 
-        String mood = moodAnalyser.analyseMood();
-        System.out.println("The mood is: " + mood);
+            String mood = moodAnalyser.analyseMood();
+            System.out.println("The mood is: " + mood);
+        } catch(IllegalArgumentException e){
+                System.out.println("Error: " + e.getMessage());
+            } finally {
+                scanner.close();
+                System.out.println("Thank you for using the Mood Analyser!");
+            }
 
 
-        scanner.close();
+
+
     }
 
 }
